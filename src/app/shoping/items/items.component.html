@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col text-center" *ngFor="let item of items">
+            <div class="border border-dark">
+                <div class="col">
+                    <img src="https://www.w3schools.com/images/picture.jpg" width="100px" height="100px" alt="plyer">
+                </div>
+                <div class="border">
+                    {{item.name}}
+                    Rs. {{item.amount}}
+                </div>
+            </div>
+            
+            <div>
+                <app-modifyitems 
+                (itemDecrement)="onDecrement()"
+                (itemIncrement)="onIncrement()"
+                (itemReset)="onReset()"
+                ></app-modifyitems>
+            </div>
+            <div>
+                <app-cart [counter]="count"></app-cart>
+            </div>
+        </div>
+    </div>
+</div>
